@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
+    <!--NÃO TEM COMO PARAR O VASCO POOOORRRAAAA!!!!!-->
     <style>
         body, html {
             margin: 0;
@@ -15,8 +16,8 @@
             background: linear-gradient(270deg, #ff7b00, #ff006e, #8338ec, #3a86ff);
             background-size: 400% 400%;
             font-family: Arial, sans-serif;
-            overflow: hidden;
             animation: backgroundAnimation 10s ease infinite;
+            font-size: x-large;
         }
 
         @keyframes backgroundAnimation{
@@ -29,13 +30,14 @@
 <body>
     <form action="https://www.w3schools.com/action_page.php">
         <h3>Data</h3>
-        <input type="date"><br>
+        <label for="ddate">Data</label>
+        <input type="date" id="ddate" name="ddate"><br>
 
         <h3>Dados de Acesso</h3>
         <label for="username">Usuário:</label><br>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" required><br>
         <label for="userpassword">Senha:</label><br>
-        <input type="password" id="userpassword" name="userpassword">
+        <input type="password" id="userpassword" name="userpassword" required>
 
         <h3>Dados Pessoais</h3>
         <label for="name">Nome:</label><br>
@@ -51,9 +53,9 @@
         <datalist id="cities">
             <option value="Sorocaba">
             <option value="São Paulo">
-            <option value="Campinas">
-            <option value="Curitiba">
-            <option value="Belo Horizonte">
+            <option value="Itu">
+            <option value="Pindamonhagaba">
+            <option value="Hambugo">
         </datalist><br>
         <label for="state">Estado:</label><br>
         <select name="state" id="state">
