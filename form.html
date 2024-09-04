@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(270deg, #ff7b00, #ff006e, #8338ec, #3a86ff);
+            background-size: 400% 400%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            animation: backgroundAnimation 10s ease infinite;
+        }
+
+        @keyframes backgroundAnimation{
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50% ;}
+        }
+    </style>
+</head>
+<body>
+    <form action="https://www.w3schools.com/action_page.php">
+        <h3>Data</h3>
+        <input type="date"><br>
+
+        <h3>Dados de Acesso</h3>
+        <label for="username">Usuário:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="userpassword">Senha:</label><br>
+        <input type="password" id="userpassword" name="userpassword">
+
+        <h3>Dados Pessoais</h3>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="adress">Endereço:</label><br>
+        <input type="text" id="adress" name="adress"><br>
+        <label for="phone">Número:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="complement">Complemento:</label><br>
+        <input type="text" id="complement" name="complement"><br>
+        <label for="cities">Cidade:</label><br>
+        <input list="cities" name="cities">
+        <datalist id="cities">
+            <option value="Sorocaba">
+            <option value="São Paulo">
+            <option value="Campinas">
+            <option value="Curitiba">
+            <option value="Belo Horizonte">
+        </datalist><br>
+        <label for="state">Estado:</label><br>
+        <select name="state" id="state">
+            <option value="são paulo">São Paulo</option>
+            <option value="paraná">Paraná</option>
+            <option value="minas gerais">Minas Gerais</option>
+        </select><br>
+        <label for="CEP">CEP:</label><br>
+        <input type="text" id="CEP" name="CEP"><br>
+
+        <h3>Gênero:</h3>
+        <input type="radio" id="masc" name="gender" value="masculino">
+        <label for="masc">Masculino</label><br>
+        <input type="radio" id="fem" name="gender" value="feminino">
+        <label for="fem">Feminino</label><br>
+        <input type="radio" id="none" name="gender" value="preferiu não falar">
+        <label for="none">Prefiro não falar</label><br>
+
+        <h3>Curso:</h3>
+        <input type="checkbox" id="tbp1" name="tbp1" value="Bike">
+        <label for="tbp1"> ADS</label>
+        <br>
+        <input type="checkbox" id="tbp2" name="tbp2" value="Car">
+        <label for="tbp2"> Jogos</label>
+        <br>
+        <input type="checkbox" id="tbp3" name="tbp3" value="Boat">
+        <label for="tbp3"> Gestão de TI</label>
+        <br>
+        <input type="checkbox" id="tbp4" name="tbp4" value="Boat">
+        <label for="tbp4"> Banco de Dados</label>
+        <div>
+        <h3>Modelo:</h3>
+        <input type="radio" id="presec" name="model" value="presencial">
+        <label for="presec">Presencial</label>
+        <br>
+        <input type="radio" id="ead" name="model" value="EAD">
+        <label for="ead">EAD</label>
+        <br>
+        <input type="radio" id="semi" name="model" value="semi presencial">
+        <label for="semi">Semi Presencial</label>
+        <br>
+        </div>
+        <br><br>
+        <input type="submit" value="Submit">
+    
+    </form>
+
+</body>
+</html>
