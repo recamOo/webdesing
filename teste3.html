@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Reis</title>
+  <link rel="stylesheet" href="ssart.css">
+  <style>
+    #meuBotao {
+        display: none; /* Escondido inicialmente */
+    }
+    .data-horario {
+            display: block; /* Mostra o calendário */
+            margin-bottom: 20px;
+        }
+        input[type="date"]:invalid {
+            background-color: #ffdddd; /* Marca erro no input */
+        }
+</style>
+</head>
+<body>
+  <div class="fundo">
+  <img src="WhatsApp Image 2024-09-08 at 10.24.16 AM.jpeg" class="pctr">
+  <h1>Barbearia reis</h1>
+  <a href="https://www.google.com/maps/dir//-23.5058337,-47.5132376/@-23.5058641,-47.5133935,21z?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="text-decoration: none;"><h4 class="bt">LOCALIZAÇÃO</h4></a>
+  <h4 class="bt">CABELO</h4>
+
+  <label class="textos">
+    <span>Barba 30 min 25 R$</span>
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+    <br><br>
+  <label class="textos">
+    Barba + pézinho 30 min 30 R$
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+  <label class="textos">
+    Relaxamento 30 min 20 R$
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+  <label class="textos">
+    Corte 30 min 25 - 30 R$
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+  <label class="textos">
+    Corte + sobrancelha 30 min 30 - 35 R$ 
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+  <label class="textos">
+    Corte + barba 1 h 40 - 45 R$
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+  <label class="textos">
+    Corte + barba + sobrancelha 1 h 45 - 50 R$
+    <input type="checkbox" class="checkbox bcb">
+  </label>
+  <br><br>
+
+  <h4 class="bt">AGENDAR HORÁRIO NA BARBEARIA</h4>
+
+    <form id="agendamentoForm">
+        <div class="data-horario">
+            <label>Escolha a data:</label>
+            <input type="date" id="dataAgendamento" required>
+        </div>
+
+  <div class="data-horario">
+    <label>Escolha o horário:</label>
+    <input type="time" id="horaAgendamento" list="horariosDisponiveis" required>
+    <datalist id="horariosDisponiveis">
+        <option value="10:30">
+        <option value="11:00">
+        <option value="11:30">
+        <option value="12:00">
+        <option value="12:30">
+        <option value="13:00">
+        <option value="13:30">
+        <option value="14:00">
+        <option value="14:30">
+        <option value="15:00">
+        <option value="15:30">
+        <option value="16:00">
+        <option value="16:30">
+        <option value="17:00">
+        <option value="17:30">
+        <option value="18:00">
+        <option value="18:30">
+    </datalist>
+    </div>
+  </div>
+
+  
+  <div class="fundob">
+    <button id="meuBotao" class="bstl">Confirmar</button>
+  </div>
+
+  <script>
+    // Seleciona todas as checkboxes
+    var checkboxes = document.querySelectorAll('.checkbox');
+    var botao = document.getElementById('meuBotao');
+
+            // Função para desativar segundas e domingos
+    function desativarSegundasEDomingos(input) {
+      input.addEventListener('input', function () {
+        var data = new Date(input.value);
+        var diaSemana = data.getUTCDay();
+
+    // Desabilitar datas para segunda (1) e domingo (0)
+      if (diaSemana === 1 || diaSemana === 0) {
+      input.setCustomValidity("Segundas e domingos não são permitidos.");
+      } else {
+      input.setCustomValidity(""); // Remove a mensagem de erro se o dia for permitido
+            }
+          });
+      }
+
+       // Verifica se a data já foi agendada anteriormente (aqui você deve implementar sua lógica de verificação)
+       var datasAgendadas = [];
+
+  function verificarDataRepetida(dataSelecionada) {
+    if (datasAgendadas.includes(dataSelecionada)) {
+        return true; // Data repetida
+    }
+    return false;
+}
+
+  // Manipulação do formulário
+  var formulario = document.getElementById('agendamentoForm');
+  var campoData = document.getElementById('dataAgendamento');
+  desativarSegundasEDomingos(campoData);
+
+  formulario.addEventListener('submit', function(event) {
+    event.preventDefault(); // Previne o comportamento padrão
+
+    var dataSelecionada = campoData.value;
+    var horaSelecionada = document.getElementById('horaAgendamento').value;
+
+    if (verificarDataRepetida(dataSelecionada)) {
+        alert("Essa data já foi escolhida. Escolha outra data.");
+        return;
+    }
+
+    // Adiciona a data à lista de datas agendadas
+    datasAgendadas.push(dataSelecionada);
+
+    // Chama a função para enviar pelo WhatsApp (implementação na Parte 2)
+    enviarDadosPorWhatsApp(dataSelecionada, horaSelecionada);
+   });
+
+    // Função para verificar se qualquer checkbox está marcada
+    function verificarCheckboxes() {
+        var algumMarcado = Array.from(checkboxes).some(function(checkbox) {
+            return checkbox.checked;
+        });
+
+        // Se alguma checkbox estiver marcada, mostra o botão
+        if (algumMarcado) {
+            botao.style.display = "inline-block"; // Mostra o botão
+        } else {
+            botao.style.display = "none"; // Esconde o botão
+        }
+    }
+
+    // Adiciona o evento de clique em cada checkbox
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('click', verificarCheckboxes);
+    });
+
+    function enviarDadosPorWhatsApp(data, hora) {
+            var telefone = "+55 (15)988074815"; // Substitua pelo seu número com o código do país
+            var mensagem = `Agendamento confirmado!\nData: ${data}\nHora: ${hora}`;
+            var url = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+  </script>
+</body>
+</html>

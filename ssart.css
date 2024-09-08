@@ -1,0 +1,79 @@
+.pctr{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+}
+
+body{
+    background-color: #ebebeb;
+    text-align: left;
+}
+
+.fundo{
+    background-color: white;
+    margin-left: 24%;
+    margin-right: 24%;
+    padding-bottom: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.fundob{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bstl{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    font-size: xx-large
+}
+
+.textos{
+    margin-left: 5px;
+    font-size: large;
+}
+
+.cstl{
+    margin-left: 40px;
+}
+
+.bcb{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        appearance: none; /* Remove a aparência padrão da checkbox */
+        background-color: #fff;
+        border: 2px solid #555;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px; /* Espaço entre a checkbox e o texto */
+}
+
+.bcb:checked {
+    background-color: black;
+    border-color: black;
+}
+
+.bcb:checked::after {
+    content: '\2714'; /* Código do símbolo de check */
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    top: 0;
+    left: 2px;
+}
+
+.bt{
+    border: solid black ;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+}
