@@ -1,6 +1,6 @@
 .pctr{
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     border-radius: 50px;
 }
 
@@ -48,13 +48,13 @@ body{
         width: 20px;
         height: 20px;
         cursor: pointer;
-        appearance: none; /* Remove a aparência padrão da checkbox */
+        appearance: none;
         background-color: #fff;
         border: 2px solid #555;
         border-radius: 4px;
         display: inline-block;
         vertical-align: middle;
-        margin-right: 10px; /* Espaço entre a checkbox e o texto */
+        margin-right: 10px;
 }
 
 .bcb:checked {
