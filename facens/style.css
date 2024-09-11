@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+}
+
+.menu{
+    background-color: black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu2{
+    border: 1px solid lightgray;
+    text-decoration: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.menu2:hover{
+    color: violet;
+}
+
+.title {
+    background: linear-gradient(to left,
+    #3494e6, #ec6ead);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.textoa{
+    text-align: center;
+    background-color: lightgrey;
+    float: inline-end;
+}
+
+.imagem{
+    float: left;
+    width: 300px;
+    height: 250px;
+}
