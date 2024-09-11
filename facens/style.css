@@ -1,16 +1,18 @@
 body{
     text-align: center;
+    background-image: linear-gradient(to bottom,black,white);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 
 .menu{
-    background-color: black;
+    background-color: #0d0d0d;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .menu2{
-    border: 1px solid lightgray;
     text-decoration: none;
     color: white;
     padding-top: 10px;
@@ -24,21 +26,23 @@ body{
 }
 
 .title {
-    background: linear-gradient(to left,
-    #3494e6, #ec6ead);
+    background: linear-gradient(to left,#3494e6, #ec6ead);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
 .textoa{
+    background-color: lightgray;
     text-align: center;
-    background-color: lightgrey;
-    float: inline-end;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px;
 }
 
 .imagem{
-    float: left;
-    width: 300px;
+    width: 305px;
     height: 250px;
+    float: left;
+    border-radius: 10px;
 }
